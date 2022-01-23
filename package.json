@@ -1,7 +1,7 @@
 {
     "name": "SugarDust",
     "version": "1.0.0",
-    "description": "��#\u0000 \u0000s\u0000u\u0000g\u0000a\u0000r\u0000d\u0000u\u0000s\u0000t\u0000\r\u0000 \u0000",
+    "description": "SugarDust low level graphics APIs",
     "main": "index.js",
     "scripts": {
         "dev": "webpack --mode development",
@@ -24,6 +24,7 @@
         "@types/node": "^17.0.8",
         "@webgpu/types": "^0.1.9",
         "css-loader": "^6.5.1",
+        "gl-matrix": "^3.4.3",
         "jquery": "^3.6.0",
         "ts-loader": "^9.2.6",
         "typescript": "^4.5.4",

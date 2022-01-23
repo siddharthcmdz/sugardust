@@ -1,0 +1,1 @@
+{"version":3,"file":"main.bundle.js","mappings":";;;;;;;AAAA,OAAO,CAAC,GAAG,CAAC,iBAAiB,CAAC","sources":["webpack://SugarDust/./src/main.ts"],"sourcesContent":["console.log('hello SugarDust')"],"names":[],"sourceRoot":""}
