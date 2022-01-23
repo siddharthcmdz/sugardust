@@ -1,138 +1,106 @@
-import { mat4 } from 'gl-matrix'
+import { SpatialID, sugardustI } from "./sugardustI";
 
-export interface SpatialID {
-    readonly id : number
-}
+class sugardust implements sugardustI {
+    constructor() {}
 
-export interface Spatial {
-    modelmat : mat4
-    modelinvmat: mat4 
-}
+    spatialCreate() : SpatialID {
+        return new SpatialID(-1)
+    }
 
-export enum VertexAttribute {
-    gaPosition = 0,
-    gaNormal = 1,
-    gaColor = 2,
-    gaTexCoords = 3,
-    gaTangent = 4
-}
+    spatialSetData(spatialID: SpatialID, spatial : Spatial) : boolean {
 
-export interface GeometryFormatID {
-    readonly id: number
-}
+    }
 
-export interface GeometryFormat {
-    vertexAttribs : Array<VertexAttribute>
-}
+    spatialGetData(spatialID : SpatialID) : Spatial {
 
-export interface GeometryDataID {
-    readonly id : number
-}
+    }
 
-export interface GeometryData {
-    debugName : string,
-    primMode : PrimitiveMode
-}
+    spatialDispose(spatialID: SpatialID) : boolean {
 
-export enum PrimitiveMode {
-    pmArray = 0,
-    pmIndices = 1
-}
+    }
 
-export enum PrimitiveType {
-    ptLine = 0,
-    ptLineStrip = 1,
-    ptLineLoop = 2,
-    ptTriangle = 3,
-    ptTriangleStrip = 4  
-}
+    geometryFormatCreate(geomFormat : GeometryFormat) : GeometryFormatID {
 
-export interface GeometryID {
-    readonly id : number
-}
+    }
 
-export interface GeometryInfo {
-    primType : PrimitiveType
-    offset : number
-    numElements : number
-}
+    geometryFormatGetData(geomFormatID : GeometryFormatID) : GeometryFormat {
 
-export interface CollectionID {
-    readonly id : number
-}
+    }
 
-export interface CollectionInfo {
-    numInstances : number
-    debugName : string
+    geometryFormatDispose(geomFormatID : GeometryFormatID) : boolean {
 
-}
+    }
 
-export interface TextureID {
-    readonly id : number
-}
+    geometryDataCreate(geomFormat : GeometryFormatID, geomData : GeometryData) : GeometryDataID {
 
-export enum TextureType {
-    tt2D,
-    ttCubemap
-}
+    }
 
-export interface TextureInfo {
-    type : TextureType,
-    debugName: string
-}
+    geometryDataUpdate(geomDataID: GeometryDataID, vertexAttrib: VertexAttribute, data : Float32Array) : boolean {
 
-export interface ShaderID {
-    readonly id: number
-}
+    }
 
-export interface ShaderInfo {
-    vertex : string
-    fragment : string
-}
+    geometryDataUpdateIndices(geomDataID: GeometryDataID, data : Uint32Array) : boolean {
 
-export interface InstanceID {
-    readonly id: number
-}
+    }
 
+    geometryDataDispose(geomDataID : GeometryDataID) : boolean {
 
-export interface CollectionInstanceInfo {
-    geomID : GeometryID,
-    spatialID : SpatialID,
-    shaderID : ShaderID,
+    }
 
-}
+    geometryCreate(geomDataID : GeometryDataID, geomInfo : GeometryInfo) : GeometryID {
 
-export interface sugardustI {
-    spatialCreate() : SpatialID
-    spatialSetData(spatialID: SpatialID, spatial : Spatial) : boolean
-    spatialGetData(spatialID : SpatialID) : Spatial
-    spatialDispose(spatialID: SpatialID) : boolean
+    }
 
-    geometryFormatCreate(geomFormat : GeometryFormat) : GeometryFormatID
-    geometryFormatGetData(geomFormatID : GeometryFormatID) : GeometryFormat
-    geometryFormatDispose(geomFormatID : GeometryFormatID) : boolean
+    geometryGetData() : GeometryInfo {
 
-    geometryDataCreate(geomFormat : GeometryFormatID, geomData : GeometryData) : GeometryDataID
-    geometryDataUpdate(geomDataID: GeometryDataID, vertexAttrib: VertexAttribute, data : Float32Array) : boolean
-    geometryDataUpdateIndices(geomDataID: GeometryDataID, data : Uint32Array) : boolean
-    geometryDataDispose(geomDataID : GeometryDataID) : boolean
+    }
 
-    geometryCreate(geomDataID : GeometryDataID, geomInfo : GeometryInfo) : GeometryID
-    geometryGetData() : GeometryInfo
-    geometryDispose(geomID : GeometryID) : boolean
+    geometryDispose(geomID : GeometryID) : boolean {
 
-    textureCreate(path: string) : TextureID
-    textureGetData(texID: TextureID) : TextureInfo 
-    textureDispose(texID: TextureID) : boolean
+    }
 
-    shaderCreate(shaderInfo : ShaderInfo) : ShaderID
-    shaderGetData(shaderID : ShaderID) : ShaderInfo 
-    shaderDispose(shaderID : ShaderID) : boolean
+    textureCreate(path: string) : TextureID {
 
-    collectionCreate(colinfo : CollectionInfo) : CollectionID
-    collectionGetData() : CollectionInfo
-    collectionDispose(colID : CollectionID) : boolean
+    }
 
-    collectionInstanceCreate(inst : CollectionInstanceInfo) : InstanceID
-    collectionInstanceDispose(instID : InstanceID) : boolean
+    textureGetData(texID: TextureID) : TextureInfo  {
+
+    }
+
+    textureDispose(texID: TextureID) : boolean {
+
+    }
+
+    shaderCreate(shaderInfo : ShaderInfo) : ShaderID {
+
+    }
+
+    shaderGetData(shaderID : ShaderID) : ShaderInfo {
+
+    }
+
+    shaderDispose(shaderID : ShaderID) : boolean {
+
+    }
+
+    collectionCreate(colinfo : CollectionInfo) : CollectionID {
+
+    }
+
+    collectionGetData() : CollectionInfo {
+
+    }
+
+    collectionDispose(colID : CollectionID) : boolean {
+
+    }
+
+    collectionInstanceCreate(inst : CollectionInstanceInfo) : InstanceID {
+
+    }
+
+    collectionInstanceDispose(instID : InstanceID) : boolean {
+
+    }
+
 }
